@@ -2,6 +2,13 @@
 Domain Name System (DNS) is a crucial part of Internet infrastructure. It is responsible for translating a human-readable, memorable domain (like google.com) into a numeric IP address (such as 142.250.192.14).
 In order to translate a domain into an IP address, your device sends a DNS request to a special DNS server called a resolver (which is most likely managed by your Internet provider i.e. ISP). The DNS requests are sent in plain text so anyone who has access to your traffic stream can see which domains you visit.
 
+
+**DNS Spoofing Architecture Diagram**
+
+<img width="437" alt="image" src="https://user-images.githubusercontent.com/28102334/177039575-020e6893-97d8-41fe-b1c1-fcb738a9bc6d.png">
+
+
+
 DNS over TLS server is used to send DNS queries over an encrypted connection, by default, DNS queries are sent over plain text connection. 
 
 There are two recent Internet standards that have been designed to solve the DNS privacy issue:
@@ -81,8 +88,3 @@ ________________________________________________________________________________
 
 apt install knot-dnsutils
 kdig -d @dns.example.com +tls-ca leaseweb.com
-
-**DNS Spoofing Architecture Diagram**
-
-<img width="437" alt="image" src="https://user-images.githubusercontent.com/28102334/177039575-020e6893-97d8-41fe-b1c1-fcb738a9bc6d.png">
-
