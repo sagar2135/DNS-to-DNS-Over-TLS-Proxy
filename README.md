@@ -82,3 +82,7 @@ ________________________________________________________________________________
 apt install knot-dnsutils
 kdig -d @dns.example.com +tls-ca leaseweb.com
 
+**DNS Spoofing Architecture Diagram**
+
+<img width="437" alt="image" src="https://user-images.githubusercontent.com/28102334/177039575-020e6893-97d8-41fe-b1c1-fcb738a9bc6d.png">
+
