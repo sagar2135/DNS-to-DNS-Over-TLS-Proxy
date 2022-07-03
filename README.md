@@ -16,7 +16,7 @@ Below is the Docker image we used:
 ___________________________________________________________________________________________________________________________________________________________________
 version: "3"
 
-# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+**# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/**
 services:
   pihole:
     container_name: pihole
@@ -40,7 +40,7 @@ services:
 ____________________________________________________________________________________________________________________________________________________________________
 
 
-Dnsdist Configuration:
+**Dnsdist Configuration:**
 
 Create dnsdist configuration file /etc/dnsdist/dnsdist.conf with the following content:
 ___________________________________________________________________________________________________________________________________________________________________
@@ -73,7 +73,7 @@ setMaxTCPConnectionsPerClient(1000)    -- set X(int) for number of tcp connectio
 setMaxTCPQueriesPerConnection(100)    -- set X(int) , similiar to addAction(MaxQPSIPRule(X), DropAction())
 ______________________________________________________________________________________________________________________________________________________________________
 
-Check if DoT works using kdig program from the knot-dnsutils package:
+**Check if DoT works using kdig program from the knot-dnsutils package:**
 
 apt install knot-dnsutils
 kdig -d @dns.example.com +tls-ca leaseweb.com
