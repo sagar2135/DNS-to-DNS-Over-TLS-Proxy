@@ -14,6 +14,7 @@ We’ll talk about DNS over TLS (DOT).
 
 Below is the Docker image we used:
 ___________________________________________________________________________________________________________________________________________________________________
+
 version: "3"
 
 **# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/**
