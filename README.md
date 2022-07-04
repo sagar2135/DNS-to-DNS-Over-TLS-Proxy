@@ -18,6 +18,11 @@ Both of them provide secure and encrypted connections to a DNS server.
 
 We’ll talk about DNS over TLS (DOT).
 
+DNS Architecture Diagram:
+
+![DNS_Architecture](https://user-images.githubusercontent.com/28102334/177097334-870d2bc8-39c1-425d-964d-9129e89fb7f3.png)
+
+
 
 Below is the Docker image we used:
 ___________________________________________________________________________________________________________________________________________________________________
