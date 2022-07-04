@@ -18,13 +18,20 @@ Both of them provide secure and encrypted connections to a DNS server.
 
 We’ll talk about DNS over TLS (DOT).
 
-DNS Architecture Diagram:
+**DNS Architecture Diagram:**
 
 ![DNS_Architecture](https://user-images.githubusercontent.com/28102334/177097334-870d2bc8-39c1-425d-964d-9129e89fb7f3.png)
 
+**What's going on in the architecture:**
 
+1. This is the Amazon-provided default DNS server for the central DNS VPC, which we’ll refer to as the DNS-VPC. This is the second IP address in the VPC CIDR range (as illustrated, this is 172.27.0.2). This default DNS server will be the primary domain resolver for all workloads running in participating AWS accounts.
+2. This shows the Route 53 Resolver endpoints. The inbound endpoint will receive queries forwarded from on-premises DNS servers and from workloads running in participating AWS accounts. The outbound endpoint will be used to forward domain queries from AWS to on-premises DNS.
+3. This shows conditional forwarding rules. For this architecture, we need two rules, one to forward domain queries for onprem.private zone to the on-premises DNS server through the outbound gateway, and a second rule to forward domain queries for awscloud.private to the resolver inbound endpoint in DNS-VPC.
+4. This indicates that these two forwarding rules are shared with all other AWS accounts through AWS Resource Access Manager and are associated with all VPCs in these accounts.
+5. This shows the private hosted zone created in each account with a unique subdomain of awscloud.private. We have created our application server in of the account and used docker to take care of DNS over TLS instead of plaintext.
+6. This shows the on-premises DNS server with conditional forwarders configured to forward queries to the awscloud.private zone to the IP addresses of the Resolver inbound endpoint.
 
-Below is the Docker image we used:
+**Below is the Docker image we used:**
 ___________________________________________________________________________________________________________________________________________________________________
 
 version: "3"
